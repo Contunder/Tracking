@@ -9,10 +9,11 @@ import java.util.Optional;
 
 public class TrackingPurchaseMapper {
 
-    public TrackingPurchaseDTO mapToDto(Integer count, String eventType, PurchaseListDTO purchasesDTO) {
+    public TrackingPurchaseDTO mapToDto(Integer count, String eventType, String userEmail, PurchaseListDTO purchasesDTO) {
         return TrackingPurchaseDTO.builder()
                 .viewCount(count)
                 .eventType(eventType)
+                .userEmail(userEmail)
                 .purchasesDTO(purchasesDTO)
                 .build();
     }

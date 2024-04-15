@@ -48,6 +48,7 @@ public class ViewPurchaseTracking {
                         () -> new AccountAPIException(HttpStatus.NOT_FOUND, "User not found with email: " + email)
                 ),
                 "Purchase",
+                email,
                 purchaseResponseFuture.get().body().get()
         );
     }

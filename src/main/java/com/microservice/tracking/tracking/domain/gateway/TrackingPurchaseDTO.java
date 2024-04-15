@@ -10,5 +10,6 @@ import java.util.List;
 public class TrackingPurchaseDTO {
     int viewCount;
     String eventType;
+    String userEmail;
     PurchaseListDTO purchasesDTO;
 }
