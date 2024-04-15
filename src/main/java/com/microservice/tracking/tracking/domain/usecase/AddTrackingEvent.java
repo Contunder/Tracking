@@ -16,13 +16,11 @@ public class AddTrackingEvent {
         this.trackingMapper = new TrackingMapper();
     }
 
-    public String execute(TrackingDTO trackingDTO, String email) {
+    public TrackingDTO execute(TrackingDTO trackingDTO, String email) {
 
-        trackingPorts.save(
-                trackingMapper.mapToModel(trackingDTO, email)
+        return trackingMapper.mapToDto(
+                trackingPorts.save(trackingMapper.mapToModel(trackingDTO, email))
         );
-
-        return "ok";
     }
 
 }

@@ -1,7 +1,7 @@
 package com.microservice.tracking.security;
 
-import com.microservice.purchase.purchase.domain.gateway.UserDetailsDto;
-import com.microservice.purchase.purchase.domain.mapper.JsonBodyHandler;
+import com.microservice.tracking.tracking.domain.gateway.UserDetailsDto;
+import com.microservice.tracking.tracking.domain.mapper.JsonBodyHandler;
 import io.micrometer.common.lang.NonNullApi;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

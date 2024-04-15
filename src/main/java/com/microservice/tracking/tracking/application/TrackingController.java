@@ -28,7 +28,7 @@ public class TrackingController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> createTracking(
+    public ResponseEntity<TrackingDTO> createTracking(
             HttpServletRequest request,
             @Valid @RequestBody TrackingDTO trackingDTO
     ) {

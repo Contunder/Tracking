@@ -14,4 +14,12 @@ public class TrackingMapper {
                 .build();
     }
 
+    public TrackingDTO mapToDto(Tracking tracking) {
+        return TrackingDTO.builder()
+                .email(tracking.getEmail())
+                .createType(tracking.getCreateType())
+                .createId(tracking.getCreateId())
+                .build();
+    }
+
 }

@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "purshase")
+@Table(name = "tracking")
 public class Tracking {
 
     @Id
@@ -20,6 +20,6 @@ public class Tracking {
     @Column(nullable = false)
     private String createType;
     @Column(nullable = false)
-    private int createId;
+    private long createId;
 
 }
