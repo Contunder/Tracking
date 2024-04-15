@@ -10,9 +10,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.ExecutionException;
+
+import static org.springframework.security.authorization.AuthorityReactiveAuthorizationManager.hasRole;
 
 @RestController
 @RequestMapping("/api/tracking")
@@ -39,6 +42,7 @@ public class TrackingController {
     }
 
     @GetMapping("/purchase")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TrackingPurchaseDTO> purchaseTracking(
             HttpServletRequest request
     ) throws ExecutionException, InterruptedException {
