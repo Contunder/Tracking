@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tracking
+  labels:
+    app: tracking
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tracking
+  template:
+    metadata:
+      labels:
+        app: tracking
+    spec:
+      containers:
+        - name: tracking
+          image: valden01/tracking:latest
+          ports:
+            - name: http
+              containerPort: 8083
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tracking
+  labels:
+    app: tracking
+spec:
+  type: LoadBalancer
+  selector:
+    app: tracking
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8083
+      targetPort: 8083
+      nodePort: 30000
