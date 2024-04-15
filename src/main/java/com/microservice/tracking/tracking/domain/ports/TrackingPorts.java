@@ -7,7 +7,8 @@ import java.util.Optional;
 
 public interface TrackingPorts extends JpaRepository<Tracking, Long> {
 
-    Optional<Tracking> findByEmail(String email);
+    Optional<Integer> countTrackingByEmailAndAndCreateType(String email, String createType);
+    Optional<Tracking> getTrackingByEmailAndAndCreateType(String email, String createType);
     Boolean existsByEmail(String email);
 
 }
