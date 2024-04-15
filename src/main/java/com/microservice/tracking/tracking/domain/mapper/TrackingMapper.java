@@ -6,9 +6,9 @@ import com.microservice.tracking.tracking.domain.gateway.TrackingDTO;
 
 public class TrackingMapper {
 
-    public Tracking mapToModel(TrackingDTO trackingDTO, String email) {
+    public Tracking mapToModel(TrackingDTO trackingDTO) {
         return Tracking.builder()
-                .email(email)
+                .email(trackingDTO.getEmail())
                 .createType(trackingDTO.getCreateType())
                 .createId(trackingDTO.getCreateId())
                 .build();

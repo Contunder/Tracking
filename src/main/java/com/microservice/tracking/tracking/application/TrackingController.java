@@ -32,14 +32,10 @@ public class TrackingController {
 
     @PostMapping("/add")
     public ResponseEntity<TrackingDTO> createTracking(
-            HttpServletRequest request,
             @Valid @RequestBody TrackingDTO trackingDTO
     ) {
-        String token = jwtAuthenticationFilter.getTokenFromRequest(request);
-        jwtTokenProvider.validateToken(token);
-        String email = jwtTokenProvider.getUsername(token);
 
-        return new ResponseEntity<>(addTrackingEvent.execute(trackingDTO, email), HttpStatus.CREATED);
+        return new ResponseEntity<>(addTrackingEvent.execute(trackingDTO), HttpStatus.CREATED);
     }
 
     @GetMapping("/purchase")
