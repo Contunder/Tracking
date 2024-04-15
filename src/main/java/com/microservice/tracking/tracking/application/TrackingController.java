@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/purchase")
+@RequestMapping("/api/tracking")
 public class TrackingController {
 
     private final AddTrackingEvent addTrackingEvent;
@@ -27,8 +27,8 @@ public class TrackingController {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
-    @PostMapping("/")
-    public ResponseEntity<String> createAccount(
+    @PostMapping("/add")
+    public ResponseEntity<String> createTracking(
             HttpServletRequest request,
             @Valid @RequestBody TrackingDTO trackingDTO
     ) {
